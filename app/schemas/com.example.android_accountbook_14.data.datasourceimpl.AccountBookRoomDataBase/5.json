@@ -1,0 +1,214 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 5,
+    "identityHash": "112cba3cc79f9d3cc15569d7fd441ac6",
+    "entities": [
+      {
+        "tableName": "text_label_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`text_label_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `text_label_title` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "text_label_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "text_label_title",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "text_label_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_text_label_table_text_label_title",
+            "unique": true,
+            "columnNames": [
+              "text_label_title"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_text_label_table_text_label_title` ON `${TABLE_NAME}` (`text_label_title`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "color_label_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`color_label_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `color_label_title` TEXT NOT NULL, `color_label_color` TEXT NOT NULL, `color_label_type` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "color_label_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "color_label_title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "color",
+            "columnName": "color_label_color",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "color_label_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "color_label_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_color_label_table_color_label_title_color_label_type",
+            "unique": true,
+            "columnNames": [
+              "color_label_title",
+              "color_label_type"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_color_label_table_color_label_title_color_label_type` ON `${TABLE_NAME}` (`color_label_title`, `color_label_type`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ledger_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ledger_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ledger_year` INTEGER NOT NULL, `ledger_month` INTEGER NOT NULL, `ledger_day` INTEGER NOT NULL, `ledger_day_of_week` TEXT NOT NULL, `ledger_price` INTEGER NOT NULL, `ledger_color_tag_id` INTEGER NOT NULL, `color_label_title` TEXT NOT NULL, `colorLabelColorHex` TEXT NOT NULL, `colorLabelType` INTEGER NOT NULL, `ledger_text_tag_id` INTEGER, `payment` TEXT, `ledger_content` TEXT, FOREIGN KEY(`ledger_text_tag_id`) REFERENCES `text_label_table`(`text_label_id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`ledger_color_tag_id`) REFERENCES `color_label_table`(`color_label_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ledger_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "year",
+            "columnName": "ledger_year",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "month",
+            "columnName": "ledger_month",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "ledger_day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dayOfWeek",
+            "columnName": "ledger_day_of_week",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "ledger_price",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "colorLabelId",
+            "columnName": "ledger_color_tag_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "colorLabelTitle",
+            "columnName": "color_label_title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "colorLabelColorHex",
+            "columnName": "colorLabelColorHex",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "colorLabelType",
+            "columnName": "colorLabelType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "paymentId",
+            "columnName": "ledger_text_tag_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "payment",
+            "columnName": "payment",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "content",
+            "columnName": "ledger_content",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ledger_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "text_label_table",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ledger_text_tag_id"
+            ],
+            "referencedColumns": [
+              "text_label_id"
+            ]
+          },
+          {
+            "table": "color_label_table",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ledger_color_tag_id"
+            ],
+            "referencedColumns": [
+              "color_label_id"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '112cba3cc79f9d3cc15569d7fd441ac6')"
+    ]
+  }
+}

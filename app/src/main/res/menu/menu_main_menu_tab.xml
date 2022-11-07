@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_main_ledger_list"
+        android:icon="@drawable/ic_task"
+        android:title="@string/menu_main_ledger_list"
+        />
+
+    <item
+        android:id="@+id/menu_main_calender"
+        android:icon="@drawable/ic_calendar_month"
+        android:title="@string/menu_main_calender"
+        />
+
+    <item
+        android:id="@+id/menu_main_chart"
+        android:icon="@drawable/ic_graph"
+        android:title="@string/menu_main_chart"
+        />
+
+    <item
+        android:id="@+id/menu_main_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/menu_main_setting"
+        />
+</menu>

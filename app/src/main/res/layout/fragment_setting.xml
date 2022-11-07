@@ -1,0 +1,60 @@
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_background"
+        android:background="?attr/colorPrimary"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <com.google.android.material.appbar.AppBarLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:id="@+id/app_bar_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/bg_under_line"
+                >
+                <TextView
+                    android:text="@string/menu_main_setting"
+                    android:textSize="18sp"
+                    android:textColor="@color/purple_524D90"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_tool_bar_title"
+                    />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.compose.ui.platform.ComposeView
+            app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:id="@+id/compose_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:id="@+id/progress"
+            android:visibility="gone"
+            app:indicatorColor="?attr/colorOnPrimary"
+            android:indeterminate="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="?attr/colorPrimary"
+        android:id="@+id/layout_background"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:id="@+id/app_bar_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/bg_under_line"
+                >
+                <TextView
+                    android:text="@string/ledger_register_title"
+                    android:textSize="18sp"
+                    android:textColor="@color/purple_524D90"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_tool_bar_title"
+                    />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_right"
+
+            android:textSize="12sp"
+            android:text="@string/ledger_income"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_ledger_checkbox_left"
+            android:layout_marginTop="16dp"
+            app:ledger_check_box_start_radius="true"
+            android:layout_marginStart="16dp"
+            android:id="@+id/btn_left"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            app:layout_constraintTop_toTopOf="@id/btn_left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_left"
+
+            android:textSize="12sp"
+            android:text="@string/ledger_spend"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_ledger_checkbox_right"
+            app:ledger_check_box_start_radius="false"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/btn_right"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_left"
+
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="16dp"
+            android:id="@+id/layout_date_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:background="@drawable/bg_under_line"
+            >
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                android:text="@string/ledger_register_date"
+                android:minWidth="76dp"
+                android:id="@+id/tv_title_date"
+                android:textSize="14sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_title_date"
+
+                android:hint="@string/input_text_select_hint"
+                android:id="@+id/tv_date"
+                android:visibility="visible"
+                android:background="@android:color/transparent"
+                android:textColorHint="?attr/colorPrimaryVariant"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:textSize="14sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.example.android_accountbook_14.presenter.ui.view.EditTextWithTitleView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_date_input"
+
+            android:id="@+id/input_text_price"
+            android:layout_marginHorizontal="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_text_price"
+
+            android:id="@+id/layout_payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <com.example.android_accountbook_14.presenter.ui.view.LabelSpinnerView
+                android:id="@+id/label_spinner_payment"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <com.example.android_accountbook_14.presenter.ui.view.LabelSpinnerView
+                android:id="@+id/label_spinner_label"
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        <com.example.android_accountbook_14.presenter.ui.view.EditTextWithTitleView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_payment"
+
+            android:id="@+id/input_text_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:enabled="false"
+            android:text="@string/btn_register"
+            android:id="@+id/btn_register"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_yellow_radius"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="등록하기"
+            />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:id="@+id/progress"
+            android:visibility="gone"
+            app:indicatorColor="?attr/colorOnPrimary"
+            android:indeterminate="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

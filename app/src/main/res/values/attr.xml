@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LedgerCheckBox">
+        <attr name="ledger_check_box_start_radius" format="boolean"/>
+        <attr name="ledger_check_box_title" format="string"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/et_text"
+    android:textColorHint="?attr/colorPrimaryVariant"
+    android:textStyle="bold"
+    android:layout_marginStart="8dp"
+    android:textSize="14sp"
+    android:textColor="?attr/colorOnPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:text="2022.7.15"
+    />

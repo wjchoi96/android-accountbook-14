@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">android-accountbook-14</string>
+
+    <!-- use at main bottom menu -->
+    <string name="menu_main_ledger_list">내역</string>
+    <string name="menu_main_calender">달력</string>
+    <string name="menu_main_chart">통계</string>
+    <string name="menu_main_setting">설정</string>
+
+    <!-- use at edit text -->
+    <string name="input_text_edit_hint">입력해주세요</string>
+
+    <!-- use at spinner -->
+    <string name="input_text_select_hint">선택해주세요</string>
+    <string name="label_spinner_edit">추가하기</string>
+
+    <!-- use at spend label edit -->
+    <string name="spend_edit_view_title">지출 카테고리 추가</string>
+    <string name="spend_edit_view_edit_mode_title">지출 카테고리 수정하기</string>
+
+    <!-- use at payment label edit -->
+    <string name="payment_edit_view_title">결제 수단 추가하기</string>
+    <string name="payment_edit_view_edit_mode_title">결제 수단 수정하기</string>
+
+    <!-- use at income label edit -->
+    <string name="income_edit_view_title">수입 카테고리 추가</string>
+    <string name="income_edit_view_edit_mode_title">수입 카테고리 수정하기</string>
+
+
+    <!-- use at label edit -->
+    <string name="edit_label_title_title">이름</string>
+    <string name="edit_label_color_title">색상</string>
+    <string name="btn_register">등록하기</string>
+    <string name="btn_save">저장하기</string>
+    <string name="btn_modify">수정하기</string>
+    <string name="btn_select">선택하기</string>
+
+    <!-- use at ledger -->
+    <string name="ledger_income">수입</string>
+    <string name="ledger_spend">지출</string>
+    <string name="ledger_total_sum">총합</string>
+
+    <string name="ledger_register_date">일자</string>
+    <string name="ledger_register_price">금액</string>
+    <string name="ledger_register_payment">결제 수단</string>
+    <string name="ledger_register_label">분류</string>
+    <string name="ledger_register_content">내용</string>
+
+    <!-- use at ledger edit -->
+    <string name="ledger_register_title">내역 등록</string>
+    <string name="ledger_edit_title">내역 수정</string>
+
+    <!-- use at chart -->
+    <string name="month_total_spend">이번 달 총 지출 금액</string>
+
+</resources>

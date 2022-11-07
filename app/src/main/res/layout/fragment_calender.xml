@@ -1,0 +1,90 @@
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_background"
+        android:background="?attr/colorPrimary"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <com.google.android.material.appbar.AppBarLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:id="@+id/app_bar_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingEnd="16dp"
+                android:paddingStart="0dp"
+                android:background="@drawable/bg_under_line"
+                >
+                <TextView
+                    tools:text="@string/menu_main_ledger_list"
+                    android:textSize="18sp"
+                    android:textColor="@color/color_text_selector_purple_524d90"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_tool_bar_title"
+                    />
+
+                <Button
+                    android:id="@+id/btn_left_arrow"
+                    android:stateListAnimator="@null"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Button.Circle"
+                    android:visibility="visible"
+                    app:iconTint="?attr/colorOnPrimary"
+                    app:iconPadding="0dp"
+                    app:iconGravity="textStart"
+                    app:icon="@drawable/ic_left_arrow"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Button
+                    android:id="@+id/btn_right_arrow"
+                    android:layout_gravity="end"
+                    android:stateListAnimator="@null"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Button.Circle"
+                    android:visibility="visible"
+                    app:iconTint="?attr/colorOnPrimary"
+                    app:iconPadding="0dp"
+                    app:iconGravity="textStart"
+                    app:icon="@drawable/ic_right_arrow"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/compose_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:id="@+id/progress"
+            android:visibility="gone"
+            app:indicatorColor="?attr/colorOnPrimary"
+            android:indeterminate="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
